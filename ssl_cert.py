@@ -36,7 +36,7 @@ def sns_Alert_send_response(sslStat):
     CiphertextBlob=b64decode(ENCRYPTEDpassword),
     EncryptionContext={'LambdaFunctionName': os.environ['AWS_LAMBDA_FUNCTION_NAME']}
 )['Plaintext'].decode('utf-8')
-    strZenossURL = 'https://siriusxm.saas.zenoss.com:443/zport/dmd/evconsole_router'
+    strZenossURL = '#########################'
 
     strZenossData = {'action':'EventsRouter', 'method':'add_event', 'data':[{'summary':'', 'device':'987424318113', 'component':'Prod Account 987424318113', 'severity':'Critical', 'evclasskey':'', 'evclass':'/App/AWS/SSLExpiry'}], 'type':'rpc', 'tid':1}
     strZenossData['data'][0]['summary'] = sslStat
