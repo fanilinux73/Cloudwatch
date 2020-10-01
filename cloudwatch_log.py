@@ -36,8 +36,8 @@ def lambda_handler(event, lambda_context):
         strZenossURL = 'https://siriusxm.saas.zenoss.com:443/zport/dmd/evconsole_router'
         strZenossData = {'action':'EventsRouter', 'method':'add_event', 'data':[{'summary':'', 'device':'258115232967', 'component':'Devops AWS Test', 'severity':'Critical', 'evclasskey':'', 'evclass':'/App/Aws/Test1'}], 'type':'rpc', 'tid':1}
         
-        # strZenossUser = 's-zenawsitops'
-        # strZenossPass = 'Awssxmitops1'
+        # strZenossUser = '############'
+        # strZenossPass = '############'
         
         ENCRYPTEDUSER = os.environ['username']
         strZenossUser = boto3.client('kms').decrypt(CiphertextBlob=b64decode(ENCRYPTEDUSER))['Plaintext'].decode('utf-8')
