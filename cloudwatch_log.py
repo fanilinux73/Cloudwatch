@@ -34,7 +34,7 @@ def lambda_handler(event, lambda_context):
         var = 'this cloudwatch alarm is in alarm state' +"            "+ zenoss[l-1]
         
         strZenossURL = '###########################'
-        strZenossData = {'action':'EventsRouter', 'method':'add_event', 'data':[{'summary':'', 'device':'258115232967', 'component':'Devops AWS Test', 'severity':'Critical', 'evclasskey':'', 'evclass':'/App/Aws/Test1'}], 'type':'rpc', 'tid':1}
+        strZenossData = {'action':'EventsRouter', 'method':'add_event', 'data':[{'summary':'', 'device':'Accnot Number', 'component':'Devops AWS Test', 'severity':'Critical', 'evclasskey':'', 'evclass':'/App/Aws/Test1'}], 'type':'rpc', 'tid':1}
         
         # strZenossUser = '############'
         # strZenossPass = '############'
