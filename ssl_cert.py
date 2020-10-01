@@ -19,7 +19,7 @@ def sns_Alert_send_response(sslStat):
     sns_Alert_Sub = 'PROD SSL Certificate Expiry Summary List'
     # if len(sslStat)>0:
     #     response = sns_client.publish(
-    #     TargetArn="arn:aws:sns:us-west-2:987424318113:Alert_SSL_ExpiryCheck_InEligibleCert",
+    #     TargetArn="arn:aws:sns:us-west-2:Accountnumber:Alert_SSL_ExpiryCheck_InEligibleCert",
     #     Message= sslStat,
     #     Subject= sns_Alert_Sub
     #     )
@@ -38,14 +38,14 @@ def sns_Alert_send_response(sslStat):
 )['Plaintext'].decode('utf-8')
     strZenossURL = '#########################'
 
-    strZenossData = {'action':'EventsRouter', 'method':'add_event', 'data':[{'summary':'', 'device':'987424318113', 'component':'Prod Account 987424318113', 'severity':'Critical', 'evclasskey':'', 'evclass':'/App/AWS/SSLExpiry'}], 'type':'rpc', 'tid':1}
+    strZenossData = {'action':'EventsRouter', 'method':'add_event', 'data':[{'summary':'', 'device':'Accountnumber', 'component':'Prod Account Accountnumber', 'severity':'Critical', 'evclasskey':'', 'evclass':'/App/AWS/SSLExpiry'}], 'type':'rpc', 'tid':1}
     strZenossData['data'][0]['summary'] = sslStat
     print(strZenossData)
 
     if len(sslStat)>0:
         
         response = sns_client.publish(
-        TargetArn="arn:aws:sns:us-west-2:987424318113:Alert_SSL_ExpiryCheck_InEligibleCert",
+        TargetArn="arn:aws:sns:us-west-2:Accountnumber:Alert_SSL_ExpiryCheck_InEligibleCert",
         Message= sslStat,
         Subject= sns_Alert_Sub
         )
